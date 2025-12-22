@@ -19,12 +19,12 @@ const config: QuartzConfig = {
       cdnCaching: true,
       typography: {
         header: {
-          name: "Georgia",
-          weights: [700],  // bold only
+          name: "Averia Serif Libre",
+          weights: [400, 700],  // bold only
           includeItalic: true,
         },
         body: {
-          name: "Roboto",
+          name: "Averia Serif Libre",
           weights: [400, 700], // regular + bold
           includeItalic: true,
         },
