@@ -1,11 +1,6 @@
 import { QuartzConfig } from "./quartz/cfg";
 import * as Plugin from "./quartz/plugins";
 
-/**
- * Quartz 4 Configuration
- *
- * Uses simple, safe fonts to avoid deployment issues.
- */
 const config: QuartzConfig = {
   configuration: {
     pageTitle: "Dr Aparajeya Shanker's Notes",
@@ -20,12 +15,24 @@ const config: QuartzConfig = {
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
-      fontOrigin: "system", // use system fonts to avoid fetch issues
+      fontOrigin: "googleFonts", // Google Fonts will load automatically
       cdnCaching: true,
       typography: {
-        header: "Georgia, serif",   // classic heavy serif
-        body: "Arial, sans-serif",  // clean, widely available
-        code: "Courier New, monospace", // guaranteed monospace
+        header: {
+          name: "Georgia",
+          weights: [700],  // bold only
+          includeItalic: true,
+        },
+        body: {
+          name: "Roboto",
+          weights: [400, 700], // regular + bold
+          includeItalic: true,
+        },
+        code: {
+          name: "IBM Plex Mono",
+          weights: [400],
+          includeItalic: false,
+        },
       },
       colors: {
         lightMode: {
@@ -56,8 +63,16 @@ const config: QuartzConfig = {
   plugins: {
     transformers: [
       Plugin.FrontMatter(),
-      Plugin.CreatedModifiedDate({ priority: ["frontmatter", "git", "filesystem"] }),
-      Plugin.SyntaxHighlighting({ theme: { light: "github-light", dark: "github-dark" }, keepBackground: false }),
+      Plugin.CreatedModifiedDate({
+        priority: ["frontmatter", "git", "filesystem"],
+      }),
+      Plugin.SyntaxHighlighting({
+        theme: {
+          light: "github-light",
+          dark: "github-dark",
+        },
+        keepBackground: false,
+      }),
       Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
       Plugin.GitHubFlavoredMarkdown(),
       Plugin.TableOfContents(),
@@ -72,7 +87,10 @@ const config: QuartzConfig = {
       Plugin.ContentPage(),
       Plugin.FolderPage(),
       Plugin.TagPage(),
-      Plugin.ContentIndex({ enableSiteMap: true, enableRSS: true }),
+      Plugin.ContentIndex({
+        enableSiteMap: true,
+        enableRSS: true,
+      }),
       Plugin.Assets(),
       Plugin.Static(),
       Plugin.Favicon(),
@@ -81,18 +99,18 @@ const config: QuartzConfig = {
         fonts: [
           {
             name: "Georgia",
-            src: "", // system font, no path needed
+            src: "./public/fonts/georgia/Georgia-Bold.ttf",
             weight: 700,
           },
           {
-            name: "Arial",
-            src: "", // system font
+            name: "Roboto",
+            src: "./public/fonts/roboto/Roboto-Regular.ttf",
             weight: 400,
           },
           {
-            name: "Courier New",
-            src: "", // system monospace
-            weight: 400,
+            name: "Roboto",
+            src: "./public/fonts/roboto/Roboto-Bold.ttf",
+            weight: 700,
           },
         ],
         fallbackFont: "Arial",
