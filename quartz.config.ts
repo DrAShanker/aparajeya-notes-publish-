@@ -16,7 +16,7 @@ const config: QuartzConfig = {
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts", // Google Fonts will load automatically
-      cdnCaching: true,
+      cdnCaching: false,
       typography: {
         header: {
           name: "Averia Serif Libre",
