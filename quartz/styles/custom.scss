@@ -1,16 +1,12 @@
-@use "./base.scss";
-
-// put your custom CSS here!
 @import url("https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,400&display=swap");
 
 :root {
   --body-font: "Averia Serif Libre", serif;
   --header-font: "Averia Serif Libre", serif;
-}
-:root {
-  --accent: #2563eb;        /* primary blue */
-  --secondary: #1e40af;     /* deeper blue */
-  --tertiary: #60a5fa;      /* soft blue */
+
+  --accent: #2563eb;
+  --secondary: #1e40af;
+  --tertiary: #60a5fa;
 }
 
 article {
@@ -26,7 +22,4 @@ blockquote {
   padding-left: 1rem;
   opacity: 0.9;
 }
-
-
-
 
