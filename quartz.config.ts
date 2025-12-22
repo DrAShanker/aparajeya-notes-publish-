@@ -8,24 +8,24 @@ import * as Plugin from "./quartz/plugins";
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Dr Aparajeya's Notes",
+    pageTitle: "Dr Aparajeya Shanker's Notes",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
     analytics: {
-      provider: "plausible"
+      provider: "plausible",
     },
     locale: "en-US",
     baseUrl: "quartz.jzhao.xyz",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
-      fontOrigin: "googleFonts",
+      fontOrigin: "googleFonts", // ensures Google Fonts are loaded automatically
       cdnCaching: true,
       typography: {
-        header: "Schibsted Grotesk",
-        body: "Source Sans Pro",
-        code: "IBM Plex Mono"
+        header: "Averia Serif Libre, serif", // updated
+        body: "Source Sans Pro, sans-serif",
+        code: "IBM Plex Mono, monospace",
       },
       colors: {
         lightMode: {
@@ -37,7 +37,7 @@ const config: QuartzConfig = {
           secondary: "#284b63",
           tertiary: "#84a59d",
           highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#fff23688"
+          textHighlight: "#fff23688",
         },
         darkMode: {
           light: "#161618",
@@ -48,30 +48,30 @@ const config: QuartzConfig = {
           secondary: "#7b97aa",
           tertiary: "#84a59d",
           highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#b3aa0288"
-        }
-      }
-    }
+          textHighlight: "#b3aa0288",
+        },
+      },
+    },
   },
   plugins: {
     transformers: [
       Plugin.FrontMatter(),
       Plugin.CreatedModifiedDate({
-        priority: ["frontmatter", "git", "filesystem"]
+        priority: ["frontmatter", "git", "filesystem"],
       }),
       Plugin.SyntaxHighlighting({
         theme: {
           light: "github-light",
-          dark: "github-dark"
+          dark: "github-dark",
         },
-        keepBackground: false
+        keepBackground: false,
       }),
       Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
       Plugin.GitHubFlavoredMarkdown(),
       Plugin.TableOfContents(),
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
       Plugin.Description(),
-      Plugin.Latex({ renderEngine: "katex" })
+      Plugin.Latex({ renderEngine: "katex" }),
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [
@@ -82,16 +82,15 @@ const config: QuartzConfig = {
       Plugin.TagPage(),
       Plugin.ContentIndex({
         enableSiteMap: true,
-        enableRSS: true
+        enableRSS: true,
       }),
       Plugin.Assets(),
       Plugin.Static(),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
-      // Comment out CustomOgImages to speed up build time if needed
-      Plugin.CustomOgImages()
-    ]
-  }
+      Plugin.CustomOgImages(), // now will use Averia Serif Libre
+    ],
+  },
 };
 
 export default config;
