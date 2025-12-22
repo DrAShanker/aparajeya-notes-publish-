@@ -88,7 +88,21 @@ const config: QuartzConfig = {
       Plugin.Static(),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
-      Plugin.CustomOgImages(), // now will use Averia Serif Libre
+      Plugin.CustomOgImages({
+  fonts: [
+    {
+      name: "Averia Serif Libre",
+      src: "./public/fonts/averia/AveriaSerifLibre-Regular.ttf",
+      weight: 400,
+    },
+    {
+      name: "Averia Serif Libre",
+      src: "./public/fonts/averia/AveriaSerifLibre-Bold.ttf",
+      weight: 700,
+    },
+  ],
+}),
+
     ],
   },
 };
