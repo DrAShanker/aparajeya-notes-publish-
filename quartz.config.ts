@@ -22,11 +22,10 @@ const config: QuartzConfig = {
     theme: {
       fontOrigin: "googleFonts",
       cdnCaching: true,
-      typography: {
-        typography: {
-		header: "Averia Serif Libre",
-		body: "Averia Serif Libre",
-		code: "IBM Plex Mono",
+     typography: {
+  header: "Averia Serif",
+  body: "Averia Serif",
+  code: "IBM Plex Mono",
 },
 
       },
