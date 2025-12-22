@@ -101,7 +101,9 @@ const config: QuartzConfig = {
       weight: 700,
     },
   ],
+  fallbackFont: "Arial",
 }),
+
 
     ],
   },
