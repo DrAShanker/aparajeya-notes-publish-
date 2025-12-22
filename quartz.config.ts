@@ -13,12 +13,13 @@ const config: QuartzConfig = {
     defaultDateType: "modified",
 
     theme: {
-      fontOrigin: "googleFonts",
-      cdnCaching: true,
-      typography: {
-        header: "Averia Serif",
-        body: "Averia Serif",
-        code: "IBM Plex Mono",
+  typography: {
+    header: "Roboto",
+    body: "Source Sans Pro",
+    code: "IBM Plex Mono",
+  },
+}
+
       },
       colors: {
         lightMode: {
