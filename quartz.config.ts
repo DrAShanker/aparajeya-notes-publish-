@@ -25,7 +25,7 @@ const config: QuartzConfig = {
         },
         body: {
           name: "Averia Serif Libre",
-          weights: [400, 700], // regular + bold
+          weights: [300, 700], // regular + bold
           includeItalic: true,
         },
         code: {
