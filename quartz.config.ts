@@ -3,6 +3,8 @@ import * as Plugin from "./quartz/plugins";
 
 /**
  * Quartz 4 Configuration
+ *
+ * Uses simple, safe fonts to avoid deployment issues.
  */
 const config: QuartzConfig = {
   configuration: {
@@ -10,18 +12,20 @@ const config: QuartzConfig = {
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
-    analytics: { provider: "plausible" },
+    analytics: {
+      provider: "plausible",
+    },
     locale: "en-US",
     baseUrl: "quartz.jzhao.xyz",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
-      fontOrigin: "local", // use only local fonts
+      fontOrigin: "system", // use system fonts to avoid fetch issues
       cdnCaching: true,
       typography: {
-        header: "Averia Serif Libre, serif",
-        body: "Source Sans Pro, sans-serif",
-        code: "IBM Plex Mono, monospace",
+        header: "Georgia, serif",   // classic heavy serif
+        body: "Arial, sans-serif",  // clean, widely available
+        code: "Courier New, monospace", // guaranteed monospace
       },
       colors: {
         lightMode: {
@@ -76,14 +80,19 @@ const config: QuartzConfig = {
       Plugin.CustomOgImages({
         fonts: [
           {
-            name: "Averia Serif Libre",
-            src: "./public/fonts/averia/AveriaSerifLibre-Regular.ttf",
+            name: "Georgia",
+            src: "", // system font, no path needed
+            weight: 700,
+          },
+          {
+            name: "Arial",
+            src: "", // system font
             weight: 400,
           },
           {
-            name: "Averia Serif Libre",
-            src: "./public/fonts/averia/AveriaSerifLibre-Bold.ttf",
-            weight: 700,
+            name: "Courier New",
+            src: "", // system monospace
+            weight: 400,
           },
         ],
         fallbackFont: "Arial",
