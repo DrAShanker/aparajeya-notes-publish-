@@ -3,8 +3,6 @@ import * as Plugin from "./quartz/plugins";
 
 /**
  * Quartz 4 Configuration
- *
- * See https://quartz.jzhao.xyz/configuration for more information.
  */
 const config: QuartzConfig = {
   configuration: {
@@ -12,18 +10,16 @@ const config: QuartzConfig = {
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
-    analytics: {
-      provider: "plausible",
-    },
+    analytics: { provider: "plausible" },
     locale: "en-US",
     baseUrl: "quartz.jzhao.xyz",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
-      fontOrigin: "googleFonts", // ensures Google Fonts are loaded automatically
+      fontOrigin: "local", // use only local fonts
       cdnCaching: true,
       typography: {
-        header: "Averia Serif Libre, serif", // updated
+        header: "Averia Serif Libre, serif",
         body: "Source Sans Pro, sans-serif",
         code: "IBM Plex Mono, monospace",
       },
@@ -56,16 +52,8 @@ const config: QuartzConfig = {
   plugins: {
     transformers: [
       Plugin.FrontMatter(),
-      Plugin.CreatedModifiedDate({
-        priority: ["frontmatter", "git", "filesystem"],
-      }),
-      Plugin.SyntaxHighlighting({
-        theme: {
-          light: "github-light",
-          dark: "github-dark",
-        },
-        keepBackground: false,
-      }),
+      Plugin.CreatedModifiedDate({ priority: ["frontmatter", "git", "filesystem"] }),
+      Plugin.SyntaxHighlighting({ theme: { light: "github-light", dark: "github-dark" }, keepBackground: false }),
       Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
       Plugin.GitHubFlavoredMarkdown(),
       Plugin.TableOfContents(),
@@ -80,31 +68,26 @@ const config: QuartzConfig = {
       Plugin.ContentPage(),
       Plugin.FolderPage(),
       Plugin.TagPage(),
-      Plugin.ContentIndex({
-        enableSiteMap: true,
-        enableRSS: true,
-      }),
+      Plugin.ContentIndex({ enableSiteMap: true, enableRSS: true }),
       Plugin.Assets(),
       Plugin.Static(),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
       Plugin.CustomOgImages({
-  fonts: [
-    {
-      name: "Averia Serif Libre",
-      src: "./public/fonts/averia/AveriaSerifLibre-Regular.ttf",
-      weight: 400,
-    },
-    {
-      name: "Averia Serif Libre",
-      src: "./public/fonts/averia/AveriaSerifLibre-Bold.ttf",
-      weight: 700,
-    },
-  ],
-  fallbackFont: "Arial",
-}),
-
-
+        fonts: [
+          {
+            name: "Averia Serif Libre",
+            src: "./public/fonts/averia/AveriaSerifLibre-Regular.ttf",
+            weight: 400,
+          },
+          {
+            name: "Averia Serif Libre",
+            src: "./public/fonts/averia/AveriaSerifLibre-Bold.ttf",
+            weight: 700,
+          },
+        ],
+        fallbackFont: "Arial",
+      }),
     ],
   },
 };
