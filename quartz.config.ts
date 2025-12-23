@@ -18,9 +18,9 @@ const config: QuartzConfig = {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Averia Serif Libre",
-        body: "Averia Serif Libre",
-        code: "IBM Plex Mono",
+        header: "Averia+Serif+Libre",
+        body: "Averia+Serif+Libre",
+        code: "IBM+Plex+Mono",
       },
       colors: {
         lightMode: {
