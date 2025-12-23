@@ -15,24 +15,12 @@ const config: QuartzConfig = {
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
-      fontOrigin: "googleFonts", // Google Fonts will load automatically
+      fontOrigin: "local",
       cdnCaching: false,
       typography: {
-        header: {
-          name: "Averia Serif Libre",
-          weights: [400, 700],  // bold only
-          includeItalic: true,
-        },
-        body: {
-          name: "Averia Serif Libre",
-          weights: [300, 700], // regular + bold
-          includeItalic: true,
-        },
-        code: {
-          name: "IBM Plex Mono",
-          weights: [400],
-          includeItalic: false,
-        },
+        header: "Averia Serif Libre",
+        body: "Averia Serif Libre",
+        code: "IBM Plex Mono",
       },
       colors: {
         lightMode: {
@@ -98,22 +86,17 @@ const config: QuartzConfig = {
       Plugin.CustomOgImages({
         fonts: [
           {
-            name: "Georgia",
-            src: "./public/fonts/georgia/Georgia-Bold.ttf",
-            weight: 700,
-          },
-          {
-            name: "Roboto",
-            src: "./public/fonts/roboto/Roboto-Regular.ttf",
+            name: "Averia Serif Libre",
+            src: "./quartz/static/fonts/averia-serif-libre-v19-latin-regular.woff2",
             weight: 400,
           },
           {
-            name: "Roboto",
-            src: "./public/fonts/roboto/Roboto-Bold.ttf",
+            name: "Averia Serif Libre",
+            src: "./quartz/static/fonts/averia-serif-libre-v19-latin-700.woff2",
             weight: 700,
           },
         ],
-        fallbackFont: "Averia Serif Libre",
+        fallbackFont: "serif",
       }),
     ],
   },
