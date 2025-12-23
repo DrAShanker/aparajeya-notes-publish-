@@ -1,23 +1,28 @@
+@font-face {
+  font-family: 'Averia Serif Libre';
+  src: url('/static/fonts/averia-serif-libre-v19-latin-300.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Averia Serif Libre';
+  src: url('/static/fonts/averia-serif-libre-v19-latin-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Averia Serif Libre';
+  src: url('/static/fonts/averia-serif-libre-v19-latin-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --body-font: "Averia Serif Libre", serif;
-  --header-font: "Averia Serif Libre", serif;
-
-  --accent: #2563eb;
-  --secondary: #1e40af;
-  --tertiary: #60a5fa;
+  --bodyFont: 'Averia Serif Libre', serif;
+  --headerFont: 'Averia Serif Libre', serif;
 }
-
-article {
-  line-height: 1.7;
-}
-
-h1, h2, h3 {
-  letter-spacing: 0.02em;
-}
-
-blockquote {
-  border-left: 4px solid var(--accent);
-  padding-left: 1rem;
-  opacity: 0.9;
-}
-
