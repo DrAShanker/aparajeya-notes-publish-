@@ -1,9 +1,15 @@
-import { QuartzConfig } from "./quartz/cfg";
-import * as Plugin from "./quartz/plugins";
 
+import { QuartzConfig } from "./quartz/cfg"
+import * as Plugin from "./quartz/plugins"
+
+/**
+ * Quartz 4 Configuration
+ *
+ * See https://quartz.jzhao.xyz/configuration for more information.
+ */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Dr Aparajeya Shanker's Notes",
+    pageTitle: "Quartz 4",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
@@ -15,11 +21,11 @@ const config: QuartzConfig = {
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
-      fontOrigin: "local",
-      cdnCaching: false,
+      fontOrigin: "googleFonts",
+      cdnCaching: true,
       typography: {
-        header: "Averia Serif Libre",
-        body: "Averia Serif Libre",
+        header: "Schibsted Grotesk",
+        body: "Source Sans Pro",
         code: "IBM Plex Mono",
       },
       colors: {
@@ -83,23 +89,10 @@ const config: QuartzConfig = {
       Plugin.Static(),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
-      Plugin.CustomOgImages({
-        fonts: [
-          {
-            name: "Averia Serif Libre",
-            src: "./quartz/static/fonts/averia-serif-libre-v19-latin-regular.woff2",
-            weight: 400,
-          },
-          {
-            name: "Averia Serif Libre",
-            src: "./quartz/static/fonts/averia-serif-libre-v19-latin-700.woff2",
-            weight: 700,
-          },
-        ],
-        fallbackFont: "serif",
-      }),
+      // Comment out CustomOgImages to speed up build time
+      Plugin.CustomOgImages(),
     ],
   },
-};
+}
 
-export default config;
+export default config
