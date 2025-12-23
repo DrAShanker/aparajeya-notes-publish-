@@ -11,7 +11,7 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "en-US",
-    baseUrl: "notes.aparajeya.com",
+    baseUrl: "aparajeya-notes-publish.pages.dev",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
